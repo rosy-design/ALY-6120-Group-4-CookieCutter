@@ -1,0 +1,60 @@
+---
+title: "2REN: Understanding the Business Problem"
+subtitle: "Module 2 Project"
+format: html
+---
+
+**Group:** 4\
+**Names** Evans Coffie, Rita Manzie, Nighat Sultana, Rosy Pineda\
+**University:** Norhteastern University\
+**Class:** ALY6120 - Leadership in Analytics\
+**Professor:** Professor Abeba N. Turi\
+**Date:** November 11, 2025
+
+------------------------------------------------------------------------
+
+#### **Introduction**
+
+In the era of digital transformation, businesses increasingly rely on analytics to drive innovation, improve decision-making, and maintain a competitive advantage. According to Collier (2012), agile analytics provides a flexible framework that aligns data-driven insights with business goals through iterative collaboration. Likewise, Provost and Fawcett (2013) highlight that data science enables organizations to transform information into strategic knowledge, serving as the foundation for evidence-based leadership. This paper focuses on the Business Understanding phase of the CRISP-DM cycle, identifying a clear business problem, outlining leadership requirements, and connecting it to a potential data-mining solution that drives measurable impact.
+
+#### **Business Problem Overview**
+
+The selected problem centers on declining customer retention for 2REN, a mid-sized online retail company. Despite rapid acquisition through social media marketing, the 2REN struggles to sustain long-term customer relationships, resulting in reduced profitability and weakened brand loyalty. Saporito (2015) notes that firms often fail to leverage customer data strategically, leading to missed opportunities for targeted customer engagement and predictive engagement. By analyzing purchasing behaviors, transaction history, and satisfaction metrics, 2REN can uncover key factors driving churn and proactively address them through an analytics-based customer-loyalty framework.
+
+#### **Business Objectives**
+
+From a business perspective, three measurable objectives guide this initiative:
+
+1.  Increase customer retention by 20% within 12 months through predictive modeling and targeted engagement strategies.
+2.  Identify key churn drivers—including order frequency, service quality, customer engagement patterns—to inform customer segmentation.
+3.  Enhance Customer Lifetime Value (CLV) by implementing targeted retention strategies and optimizing marketing investments.
+
+These objectives align with Collier’s (2012) emphasis on agile, value-driven analytics cycles that deliver incremental improvements and continuous business impact.
+
+#### **Leadership Requirements for Success**
+
+Three leadership requirements are essential for ensuring a successful analytics-based solution:
+
+1.  Visionary and Adaptive Leadership – Maxwell (2019) asserts that effective leaders must embrace change and empower teams to innovate through analytics. Transformational leadership encourages curiosity and accountability in problem-solving.
+2.  Collaborative and Empowering Culture – DePree (2004) views leadership as service, emphasizing the importance of trust and inclusion. Encouraging interdisciplinary teamwork between marketing, IT, and analytics ensures unified strategic direction.
+3.  Ethical Data Stewardship and Transparency – Provost and Fawcett (2013) emphasize responsible data governance, ensuring that customer data is handled ethically and securely while maximizing business value.
+
+Through these leadership practices, analytics becomes an organizational mindset rather than a departmental initiative, fostering continuous learning and adaptability.
+
+#### **Connecting the Business Problem to a Data-Mining Solution**
+
+To address the retention problem that 2REN is facing, predictive and prescriptive data-mining solutions will be applied to forecast churn probability and identify actionable retention drivers. Classification models such as logistic regression, decision trees, random forest, and support vector machines will predict churn risk, while clustering techniques will segment customers by behavior patterns. Regression models will estimate customer lifetime value and create risk scores for at-risk customers. Collier (2012) emphasizes agile cycles of data exploration and feedback, allowing leaders to adjust strategies dynamically. By implementing these models, 2REN’s management team can design targeted retention interventions, loyalty incentives based on tenure and spending patterns, and proactive customer service outreach for at-risk segments. As Saporito (2015) asserts, integrating analytics into operational decision-making transforms data into tangible business value. Ultimately, leadership must ensure that analytics insights align with corporate strategy and reinforce an ethical, customer-centric culture.
+
+#### **Conclusion**
+
+The Business Understanding phase of the CRISP-DM model lays the groundwork for translating organizational challenges into data-driven opportunities. Through adaptive leadership, agile analytics, and ethical data management, businesses can move beyond descriptive reporting toward strategic transformation. As Collier (2012), Maxwell (2019), and DePree (2004) affirm, leading with analytics is not just about technology—it is about cultivating people and purpose to convert insight into long-term value.
+
+#### **References**
+
+Collier, K. (2012). *Agile analytics: A value-driven approach to business intelligence and data warehousing*. Pearson Education. \
+DePree, M. (2004). *Leadership is an art.* Currency/Doubleday. \
+Maxwell, J. C. (2019). *Leadership shift: 11 essential changes every leader must embrace*. HarperCollins Leadership. \
+Provost, F., & Fawcett, T. (2013). *Data science for business.* O’Reilly Media. \
+Saporito, P. (2015). *Applied insurance analytics: A framework for driving more value from data assets, technologies, and tools.* Pearson FT Press. \
+Northouse, P. G. (2021). *Leadership: Theory and practice (9th ed.).* SAGE Publications. \
+Goleman, D. (2017). *Leadership that gets results.* Harvard Business Review Press.
