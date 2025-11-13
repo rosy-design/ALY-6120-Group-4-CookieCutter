@@ -16,3 +16,5 @@ we will us this README.md file to document the changes we made like this:
 
 ### Updates: 
 11/12/2025: Created assignment 3 folder in reports. Created a README.md file in assignment 3 folder. - Rosy
+
+11/12/2025: Uploaded draft 1 of assignment 3. - Rosy
