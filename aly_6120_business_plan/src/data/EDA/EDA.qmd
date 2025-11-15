@@ -1,0 +1,177 @@
+---
+title: "ALY 6120-EDA-Module3"
+format: gfm
+---
+
+## Introduction
+
+Below is an simple EDA of our e-commerce-dataset to uncover simple patterns before we use predictive analysis.
+
+## Loading the dataset
+
+At a glance we can see a quick summary statistics fo each variable for the dataset. Although this isn't ideal, it does give us a brief overview of what we might encounter.
+
+```{r}
+# load packages 
+library(tidyverse)   
+library(janitor)     
+
+# load dataset
+store <- read.csv("e-commerce-dataset.csv")
+
+# review raw data
+glimpse(store) # check structure
+
+# clean column names
+store <- store %>% clean_names()  
+
+```
+
+```{r}
+# check the summary stats 
+summary(store) 
+```
+
+## Missing Values
+
+The dataset does contain missing values.
+
+```{r}
+# check for missing values in each column
+colSums(is.na(store)) 
+```
+
+## Removing missing values
+
+Missing values are now removed for easier EDA. We need to discuss if imputing the values would be better for prediction models.
+
+```{r}
+# drop rows with missing values
+store <- store %>% drop_na()  # remove incomplete rows
+
+# confirm values were removed
+colSums(is.na(store)) 
+```
+
+## Changing structure
+
+The dataset will need to change certain variable's structure.
+
+```{r}
+# convert character columns to factors
+store <- store %>% mutate(across(where(is.character), as.factor))  
+
+# convert integer columns to numeric
+store <- store %>% mutate(across(where(is.integer), as.numeric))  
+
+# confirm updated structure
+str(store)  # check final structure after cleaning
+```
+
+## Visualizations and Early Findings
+
+Below are charts that can tell us patters in the dataset.
+
+#### Distributions
+
+Most variables are leaning toward lower values, so the data isn’t evenly spread out. We can see that most customers behave the same way, while only a small group showing higher numbers.
+
+```{r}
+# numeric distributions
+store %>%
+  select(where(is.numeric)) %>%
+  gather(variable, value) %>%
+  ggplot(aes(x = value)) +
+  geom_histogram(bins = 30, fill = "steelblue", color = "black") +
+  facet_wrap(~ variable, scales = "free_x") +
+  labs(title = "Numeric Variable Distributions") +
+  theme_minimal()
+```
+
+#### Bar charts
+
+Male customers make up the larger share of the dataset, with 2271 entries. Female customers are fewer at 1503. This means the store’s customer base skews more male.
+
+```{r}
+#  Gender Distribution
+ggplot(store, aes(x = gender)) +
+  geom_bar(fill = "steelblue") +
+    geom_text(stat = "count", aes(label = after_stat(count)), vjust = -0.3) +
+  labs(title = "Gender Distribution",
+       x = "Gender",
+       y = "Count") +
+  theme_minimal()
+```
+
+Most customers log in with a mobile phone, which has the highest count at 1936. computers come next with 1111 users. Regular phones are the least used at 727. This shows that mobile is the main way people access the store.
+
+```{r}
+# preferred login device 
+ggplot(store, aes(x = preferred_login_device)) +
+  geom_bar(fill = "steelblue") +
+  geom_text(stat = "count", aes(label = after_stat(count)), vjust = -0.3) +
+  labs(title = "Preferred Login Device",
+       x = "Device",
+       y = "Count") +
+  theme_minimal() 
+
+```
+
+#### Churn Findings
+
+Most customers stay with the store, with 3143 not churning. only 631 customers churned. That means churn is much lower than retention in this dataset.
+
+```{r}
+# churn distribution
+ggplot(store, aes(x = factor(churn))) +
+  geom_bar(fill = "steelblue") +
+  geom_text(stat = "count", aes(label = after_stat(count)), vjust = -0.3) +
+  labs(title = "Churn Distribution",
+       x = "Churn (0 = no, 1 = yes)",
+       y = "Count") +
+  theme_minimal()
+
+```
+
+Customers who churn have very short tenure, almost all close to zero. customers who stay have much higher tenure and a wider spread.
+
+```{r}
+# tenure by churn status boxplot
+ggplot(store, aes(x = factor(churn), y = tenure)) +
+  geom_boxplot(fill = "steelblue") +
+  labs(title = "Tenure by Churn Status",
+       x = "Churn (0 = no, 1 = yes)",
+       y = "Tenure (months)") +
+  theme_minimal()
+```
+
+#### Correlation Martix
+
+Variables like cashback amount, order count, coupon used, and spending all show high correlations, meaning customers who spend more tend to do all of these together. Churn and tenure show a strong negative correlation, meaning people with low tenure are more likely to leave. The rest of the variables have low correlations, so they don’t move much with anything else.
+
+```{r}
+# prep for correlation but selecing numeric columns only
+numeric_store <- store %>% select(where(is.numeric))  # keep only numeric vars
+
+# create correlation matrix
+cor_matrix <- cor(numeric_store, use = "complete.obs")
+
+# convert matrix to long format for plotting
+melted_cor <- as.data.frame(as.table(cor_matrix))  
+
+# plot correlation martix
+ggplot(melted_cor, aes(Var1, Var2, fill = Freq)) +
+  geom_tile() +  
+  scale_fill_gradient2(low = "steelblue", high = "darkred") +
+  labs(title = "Correlation Matrix",
+       x = "",
+       y = "",
+       fill = "Correlation") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
+
+## Conclusion
+
+The patterns in this dataset give a good base for data mining because some variables clearly separate customer behavior. The strong links between spending-related features can support clustering, while the churn-tenure relationship is a solid starting point for prediction models. Next steps would be building a churn model, testing which features actually drive churn, and creating customer segments to target high-value or high-risk groups more effectively.
