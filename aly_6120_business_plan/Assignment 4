@@ -1,0 +1,7 @@
+A clean dataset is the only way the modeling group can produce reliable results, so the preparation step has to be blunt and systematic. The first issue is missing values. Dropping rows is acceptable only when the loss is tiny relative to the dataset size. If the missing fields are meaningful, we should impute using medians for numerical features and the most frequent category for categorical attributes. Converting nulls to zero is only valid when zero has a real semantic meaning; otherwise, it injects false information.
+Next is data-type validation. Every column must be checked to confirm that numeric fields contain only numbers, dates use a valid format, and categorical fields follow the expected domain. Incorrect types should be coerced if possible or flagged for manual correction. This prevents silent model failures downstream.
+Finally, outliers must be detected using statistical checks such as z-scores or interquartile range. Genuine extreme values are kept, but erroneous ones should be capped or removed depending on their cause. Outliers caused by data-entry mistakes should never be modeled as real behavior.
+Cleaning, validating, and standardizing the dataset ensures the modeling group works with consistent and trustworthy inputs.
+References
+Kuhn, M., & Johnson, K. (2013). Applied predictive modeling. Springer.
+Provost, F., & Fawcett, T. (2013). Data science for business. O’Reilly Media.
