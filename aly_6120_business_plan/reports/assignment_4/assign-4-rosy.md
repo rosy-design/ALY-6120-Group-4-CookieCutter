@@ -1,0 +1,9 @@
+#### Intro
+Following the CRISP-DM, the next stage of our project is Data Preparation. This focuses on getting the data ready for a customer churn prediction project. After stating our business objectives and identifying the data we need in previous phases, this phase involves selecting, cleaning, constructing, integrating, and formatting data to ensure high-quality inputs for analysis (Luna, 2021). We will dive deeper into the data source selected, determine which team members to collaborate with for the e-commerce company, address data quality issues like missing values and outliers, and select the right models for discovering patterns in customer behavior.
+
+#### Data Sources and Acquisition 
+We are using the "Ecommerce Customer Churn Analysis and Prediction" dataset from Kaggle by Ankit Verma, which is a synthetic dataset. It can be acquired externally as a CSV download from the site. In a real-life situation, an online retail company would source the data from multiple systems such as a CRM system for customer demographics and order history, or a mobile application for behavioral information. Data acquisition methods would vary based on the database infrastructure. For structured databases, SQL queries would extract the needed information. For consolidating multiple sources, ETL pipelines would integrate data into a centralized data warehouse (Luna, 2021). Additional sources like customer service platforms and marketing tools would also provide satisfaction scores and coupon usage data. This multi-source approach ensures a complete customer profile needed for accurate churn prediction modeling.
+
+#### Refernces  
+Luna, Z. (2021, August 10). CRISP-DM Phase 3: Data preparation. Analytics Vidhya. https://medium.com/analytics-vidhya/crisp-dm-phase-3-data-preparation-6105ad0db1c1
+
