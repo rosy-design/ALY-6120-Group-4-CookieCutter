@@ -1,0 +1,25 @@
+Five Important Questions From the Dataset (Final Project Ready)
+1. What key customer behavior variables significantly predict churn in the e-commerce platform?
+
+This question allows you to use supervised learning models (Logistic Regression, Random Forest, XGBoost) to determine which factors—such as tenure, app usage hours, order count, delivery distance, payment mode, or complaint history—are most influential.
+
+2. How does customer engagement (e.g., HourSpendOnApp, NumberOfDeviceRegistered) influence the likelihood of churn?
+
+This question examines engagement patterns and helps identify which behaviors indicate declining customer interest.
+It can involve correlation analysis, feature importance ranking, or clustering.
+
+3. Are customers with complaints or dissatisfaction scores more likely to churn compared to those without complaints?
+
+This explores the impact of customer experience and service quality on retention.
+You can compare churn rates between customers with complaints vs. those with no complaints using statistical tests or visualization.
+
+4. How do purchasing patterns (OrderCount, CouponUsed, CashbackAmount, OrderAmountHikeFromLastYear) relate to customer churn?
+
+This helps analyze spending behavior and the effectiveness of incentives.
+It can lead to insights about revenue-driven churn predictors and loyalty strategies.
+
+5. Which customer segments (based on CityTier, Gender, PreferredDevice, or PreferredPaymentMode) show the highest churn rates?
+
+This question allows segmentation and persona analysis.
+You can classify high-risk groups and propose targeted retention strategies.
+
